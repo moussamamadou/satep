@@ -12,7 +12,8 @@
 (function () {
   var ua = navigator.userAgent;
   var isSafari = /AppleWebKit/i.test(ua) && !/Chrome|CriOS|FxiOS|EdgiOS|OPiOS|Android/i.test(ua);
-  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  /* iPadOS browsers often present a Macintosh UA — the touch check catches them */
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
   var isMobile = window.matchMedia && matchMedia('(max-width: 767px)').matches;
 
   window.SB_FLAT = isSafari || isIOS;
