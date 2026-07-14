@@ -28,7 +28,7 @@
     holder.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden';
     holder.setAttribute('aria-hidden', 'true');
     holder.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg"><defs><g id="sb-brush">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;" ><defs><g id="sb-brush">' +
       '<path d="' + (isMobile ? EPS5 : FULL) + '"/>' +
       '</g></defs></svg>';
     (document.body || document.documentElement).insertBefore(holder.firstChild, null);
